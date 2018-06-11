@@ -4,6 +4,8 @@ function Contact(first, last) {
   this.lastName = last;
 }
 
+//a prototype method to return the full name of a Contact object.
+/*denotes the type of object this method is meant for when we state Contact.prototype.fullName = function()*/
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
@@ -18,7 +20,7 @@ $(document).ready(function() {
 
     var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
-    $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
+    $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
     //show the contact information on the right side column when it is clicked
     $(".contact").last().click(function() {
